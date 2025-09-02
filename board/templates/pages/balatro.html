@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Balatro Cards</h1>
+<div class="card-container">
+    {% for card in cards %}
+    <div class="card {% if card.suit in ['h', 'd'] %}red{% endif %}">
+        <div class="rank">{{ card.rank }}</div>
+        <div class="suit">{{ card.symbol }}</div>
+    </div>
+    {% endfor %}
+</div>
+<h2>
+        <button>PLAY</button>
+        <button>DISCARD</button>
+    </h2>
+{% endblock %}
